@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
 
-const Button = ({ onPress, children }) => {
+const SideButton = ({ onPress, children }) => {
   const { buttonStyle, textStyle } = styles;
   return (
     <TouchableOpacity onPress={onPress} style={buttonStyle}>
@@ -16,20 +16,20 @@ const styles = {
      alignSelf: 'center',
      justifyContent: 'center',
      color: '#ffffff',
-     fontSize: 25,
+     fontSize: 20,
      fontWeight: '100',
-     height: 'auto',
-     width: 'auto'
+     height: 'auto'
       },
 buttonStyle: {
-      backgroundColor: '#019879',
-      borderRadius: 25,
-      width: 300,
-      height: 50,
-      alignSelf: 'center',
-      justifyContent: 'center',
-      marginTop: 20,
-      borderColor: '#1be9b6',
+    backgroundColor: '#019879',
+    borderRadius: 25,
+    width: 210,
+    height: 40,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    borderColor: '#1be9b6',
+    marginTop: 10,
   },
 };
-export default Button;
+
+export default SideButton;
