@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import SideButton from '../common/SideButton';
+import EventCalender from './EventCalender';
 
 
 class SideBarContent extends Component {
@@ -15,7 +16,7 @@ class SideBarContent extends Component {
               />
               {/* eslint-enable global-require */}
               </View>
-                <SideButton>Etkinlik Takvimi</SideButton>
+                <SideButton onPress={() => EventCalender()} >Etkinlik Takvimi</SideButton>
                 <SideButton>Konuşmacılar</SideButton>
                 <SideButton>Sposorlar</SideButton>
             </View>
