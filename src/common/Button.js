@@ -18,21 +18,18 @@ const styles = {
      color: '#ffffff',
      fontSize: 25,
      fontWeight: '100',
-     //paddingTop: 10,
-     //paddingBottom: 10,
-     height: 250
+     height: 'auto',
+     width: 'auto'
       },
 buttonStyle: {
-      flex: 1,
-      alignSelf: 'stretch',
-      backgroundColor: '#1be9b6',
+      backgroundColor: '#019879',
       borderRadius: 25,
+      width: 300,
+      height: 50,
+      alignSelf: 'center',
+      justifyContent: 'center',
+      marginTop: 20,
       borderColor: '#1be9b6',
-      marginTop: 10,
-      marginLeft: 30,
-      marginRight: 30,
-      paddingTop: 25,
-      paddingBottom: 20,
   },
 };
 export default Button;

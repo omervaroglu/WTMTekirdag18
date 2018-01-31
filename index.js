@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { View, AppRegistry } from 'react-native';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import SideMenu from 'react-native-side-menu';
-import reducers from './src/reducers/index';
-//import Router from './src/Router';
 import Home from './src/Components/Home';
 import SideBarContent from './src/Components/SideBarContent';
 import Header from './src/common/Header';

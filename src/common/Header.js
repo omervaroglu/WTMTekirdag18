@@ -1,7 +1,5 @@
 import React from 'react';
 import { Text, View, TouchableWithoutFeedback, Image } from 'react-native';
-//import Icon from 'react-native-vector-icons';
-//import Drawer from '../Drawer';
 
 const Header = (props) => {
   const { textStyle, viewStyle } = styles;
@@ -33,11 +31,12 @@ const styles = {
     color: 'white',
   },
   viewStyle: {
-    backgroundColor: '#A2A2A2',
+    backgroundColor: '#019879',
     height: 60,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    padding: 10,
   }
 };
 
