@@ -26,7 +26,8 @@ class index extends Component {
       <SideMenu
       menu={<SideBarContent />}
       isOpen={this.state.isOpen}
-      onchanged={(isopen) => this.updateMenu(isOpen)}
+      onchanged={(isopen) => this.updateMenu(isOpen)}//ikinci kez tıklandığında açma işlemi yapmıyor.Düzelt.
+      disableGestures={true}//parmak kaydırma haraketiyle açılmaya kapalı
       >
     <View style={{ flex: 1 }}>
      <Header headerText="#WTMTek18'" toggle={this.toggle.bind(this)} />
