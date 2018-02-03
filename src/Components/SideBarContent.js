@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { Actions } from 'react-native-router-flux';
 import SideButton from '../common/SideButton';
-import EventCalender from './EventCalender';
 
 
 class SideBarContent extends Component {
 
       render() {
-        const { navigate } = this.props.navigation;
         return (
             <View style={{ backgroundColor: '#ffffff' }} >
               <View>
@@ -20,20 +18,23 @@ class SideBarContent extends Component {
               {/* eslint-enable global-require */}
               </View>
                 <SideButton
-                onPress={() => this.props.navigation.navigate('EventCalender')}
+                onPress={() => Actions.CalenderScreen()}
                 >
                 Etkinlik Takvimi
                 </SideButton>
-                <SideButton>Konuşmacılar</SideButton>
-                <SideButton>Sposorlar</SideButton>
+                <SideButton
+                onPress={() => Actions.SpeakersScreen()}
+                >
+                Konuşmacılar
+                </SideButton>
+                <SideButton
+                onPress={() => Actions.SponsorsScreen()}
+                >
+                Sponsorlar
+                </SideButton>
             </View>
         );
     }
 }
-// burda SideMenu kısmındaki componentleri yönlendirmek için React-navigation kullandım ama olmadı.
-const AppRouter = StackNavigator({
-  SideBarContent: { screen: SideBarContent },
-  EventCalender: { screen: EventCalender },
-});
 
-export default AppRouter;
+export default SideBarContent;

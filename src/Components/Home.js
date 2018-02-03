@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import getDirections from 'react-native-google-maps-directions';
+import SideMenu from 'react-native-side-menu';
+import SideBarContent from './SideBarContent';
 import Button from '../common/Button';
+import Header from '../common/Header';
 
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+          this.state = {
+              isOpen: false,
+          };
+        }
+  toggle() {
+          this.setState({
+            isOpen: !this.state.isOpen
+               });
+           }
+ updateMenu(isOpen) {
+         this.setState({ isOpen });
+         }
+
 
   handleGetDirections = () => {
     const data = {
@@ -28,7 +46,14 @@ class Home extends Component {
   }
   render() {
   return (
+    <SideMenu
+    menu={<SideBarContent />}
+    isOpen={this.state.isOpen}
+    onchanged={(isopen) => this.updateMenu(isOpen)}//ikinci kez tıklandığında açma işlemi yapmıyor.Düzelt.
+    disableGestures={true}//parmak kaydırma haraketiyle açılmaya kapalı
+    >
     <View style={{ flex: 1, backgroundColor: '#fff' }}>
+     <Header headerText="#WTMTek18'" toggle={this.toggle.bind(this)} />
      <View>
      {/* eslint-disable-line global-require */}
      <Image
@@ -47,6 +72,7 @@ class Home extends Component {
       <Button> Takvime Ekle </Button>
      </View>
     </View>
+    </SideMenu>
   );
 }
 }

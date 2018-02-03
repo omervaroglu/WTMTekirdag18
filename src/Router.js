@@ -1,19 +1,35 @@
 import React from 'react';
-import { Scene, Router, Actions } from 'react-native-router-flux';
-import Home from './Components/Home';
+import { Scene, Router } from 'react-native-router-flux';
 import EventCalender from './Components/EventCalender';
+import Home from './Components/Home';
+import Speakers from './Components/Speakers';
+import Sponsors from './Components/Sponsors';
 
 const RouterComponent = () => {
   return (
-   <Router sceneStyle={{ marginTop: 50 }}>
+   <Router >
     <Scene key="menu" >
+      <Scene
+      key="HomeScreen"
+      component={Home}
+      hideNavBar
+      initial
+      />
       <Scene
       key="CalenderScreen"
       component={EventCalender}
-      title="Etkinlik Takvimi"
       />
+      <Scene
+      key="SpeakersScreen"
+      component={Speakers}
+      />
+      <Scene
+      key="SponsorsScreen"
+      component={Sponsors}
+      />
+    </Scene>
    </Router>
   );
 };
 
-export default RouterCmponent;
+export default RouterComponent;

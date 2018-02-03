@@ -1,27 +1,30 @@
 import React from 'react';
-import { Text, View, TouchableWithoutFeedback, Image } from 'react-native';
+import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 const Header = (props) => {
   const { textStyle, viewStyle } = styles;
   return (
     <View style={viewStyle}>
-    <TouchableWithoutFeedback onPress={() => props.toggle()} >
+    <TouchableOpacity onPress={() => props.toggle()} >
     {/* eslint-disable-line global-require */}
     <Image
         style={{ width: 25, height: 25 }}
         source={require('../img/menu.png')}
     />
     {/* eslint-enable global-require */}
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => Actions.HomeScreen()} >
     <Text style={textStyle} > {props.headerText} </Text>
-    <TouchableWithoutFeedback onPress={() => console.log('tık')} >
+    </TouchableOpacity>
+    <TouchableOpacity>
     {/* eslint-disable-line global-require */}
     <Image
         style={{ width: 25, height: 25 }}
         source={require('../img/twitter.png')}
     />
     {/* eslint-enable global-require */}
-    </TouchableWithoutFeedback>
+    </TouchableOpacity>
     </View>
   );
 };

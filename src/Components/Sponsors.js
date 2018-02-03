@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, Modal, Button } from 'react-native';
+import { View } from 'react-native';
 import SideMenu from 'react-native-side-menu';
 import Header from '../common/Header';
 import SideBarContent from './SideBarContent';
 
-class EventCalender extends Component {
-
+class Sponsors extends Component {
   constructor(props) {
     super(props);
           this.state = {
               isOpen: false,
           };
         }
-
   toggle() {
           this.setState({
             isOpen: !this.state.isOpen
@@ -31,12 +29,11 @@ class EventCalender extends Component {
        disableGestures={true}//parmak kaydırma haraketiyle açılmaya kapalı
        >
        <View style={{ flex: 1, backgroundColor: '#fff' }}>
-       <Header headerText="Etkinlik Takvimi" toggle={this.toggle.bind(this)} />
-       <Text >Henüz bir takvimimiz yok. Olur olmaz size haber vereceğiz.</Text>
+       <Header headerText="Sponsorlar" toggle={this.toggle.bind(this)} />
        </View>
        </SideMenu>
    );
  }
  }
-// text e güzel bir style ekle
-export default EventCalender;
+
+export default Sponsors;

@@ -1,39 +1,14 @@
 import React, { Component } from 'react';
 import { View, AppRegistry } from 'react-native';
-import SideMenu from 'react-native-side-menu';
-import Home from './src/Components/Home';
-import SideBarContent from './src/Components/SideBarContent';
-import Header from './src/common/Header';
+import Router from './src/Router';
+
 
 class index extends Component {
-  constructor(props) {
-    super(props);
-          this.state = {
-              isOpen: false,
-          };
-        }
-  toggle() {
-          this.setState({
-            isOpen: !this.state.isOpen
-               });
-           }
- updateMenu(isOpen) {
-         this.setState({ isOpen });
-         }
-
   render() {
    return (
-      <SideMenu
-      menu={<SideBarContent />}
-      isOpen={this.state.isOpen}
-      onchanged={(isopen) => this.updateMenu(isOpen)}//ikinci kez tıklandığında açma işlemi yapmıyor.Düzelt.
-      disableGestures={true}//parmak kaydırma haraketiyle açılmaya kapalı
-      >
     <View style={{ flex: 1 }}>
-     <Header headerText="#WTMTek18'" toggle={this.toggle.bind(this)} />
-     <Home />
+     <Router />
     </View>
-    </SideMenu>
   );
 }
 }
