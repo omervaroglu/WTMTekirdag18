@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Modal, Button } from 'react-native';
+import { View, Text } from 'react-native';
 import SideMenu from 'react-native-side-menu';
 import Header from '../common/Header';
 import SideBarContent from './SideBarContent';

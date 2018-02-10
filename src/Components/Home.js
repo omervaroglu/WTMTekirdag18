@@ -21,6 +21,7 @@ class Home extends Component {
            }
  updateMenu(isOpen) {
          this.setState({ isOpen });
+         console.log('is open');
          }
 
 
@@ -49,29 +50,29 @@ class Home extends Component {
     <SideMenu
     menu={<SideBarContent />}
     isOpen={this.state.isOpen}
-    onchanged={(isopen) => this.updateMenu(isOpen)}//ikinci kez tıklandığında açma işlemi yapmıyor.Düzelt.
+    onChanged={(isOpen) => this.updateMenu(isOpen)}//ikinci kez tıklandığında açma işlemi yapmıyor.Düzelt.
     disableGestures={true}//parmak kaydırma haraketiyle açılmaya kapalı
     >
-    <View style={{ flex: 1, backgroundColor: '#fff' }}>
-     <Header headerText="#WTMTek18'" toggle={this.toggle.bind(this)} />
-     <View>
-     {/* eslint-disable-line global-require */}
-     <Image
-         style={{ width: 'auto', height: 250 }}
-         source={require('../img/afis1.png')}
-     />
-     {/* eslint-enable global-require */}
-     </View>
-     <View>
-      <Button> Hemen Bilet Al </Button>
-     </View>
-     <View>
-      <Button onPress={this.handleGetDirections}> Konuma Bak </Button>
-     </View>
-     <View>
-      <Button> Takvime Ekle </Button>
-     </View>
-    </View>
+      <View style={{ flex: 1, backgroundColor: '#fff' }} >
+        <Header headerText="#WTMTek18'" toggle={this.toggle.bind(this)} />
+        <View>
+          {/* eslint-disable-line global-require */}
+          <Image
+             style={{ width: 'auto', height: 250 }}
+             source={require('../img/afis1.png')}
+          />
+          {/* eslint-enable global-require */}
+        </View>
+        <View>
+          <Button> Hemen Bilet Al </Button>
+        </View>
+        <View>
+          <Button onPress={this.handleGetDirections}> Konuma Bak </Button>
+        </View>
+        <View>
+         <Button> Takvime Ekle </Button>
+        </View>
+        </View>
     </SideMenu>
   );
 }
