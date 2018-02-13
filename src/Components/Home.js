@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { View, Image } from 'react-native';
 import getDirections from 'react-native-google-maps-directions';
 import SideMenu from 'react-native-side-menu';
+import * as AddCalendarEvent from 'react-native-add-calendar-event';
 import SideBarContent from './SideBarContent';
 import Button from '../common/Button';
 import Header from '../common/Header';
-
 
 class Home extends Component {
   constructor(props) {
@@ -50,10 +50,10 @@ class Home extends Component {
     <SideMenu
     menu={<SideBarContent />}
     isOpen={this.state.isOpen}
-    onChanged={(isOpen) => this.updateMenu(isOpen)}//ikinci kez tıklandığında açma işlemi yapmıyor.Düzelt.
-    disableGestures={true}//parmak kaydırma haraketiyle açılmaya kapalı
+    onChange={(isOpen) => this.updateMenu(isOpen)}
+    disableGestures={true}
     >
-      <View style={{ flex: 1, backgroundColor: '#fff' }} >
+      <View style={{ flex: 1, backgroundColor: '#fff' }} onPress={() => this.toggle.bind(this)}>
         <Header headerText="#WTMTek18'" toggle={this.toggle.bind(this)} />
         <View>
           {/* eslint-disable-line global-require */}
@@ -77,4 +77,6 @@ class Home extends Component {
   );
 }
 }
+
+
 export default Home;

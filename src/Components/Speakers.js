@@ -30,7 +30,7 @@ class Speakers extends Component {
        <SideMenu
        menu={<SideBarContent />}
        isOpen={this.state.isOpen}
-       onchanged={(isOpen) => this.updateMenu(isOpen)}
+       onChange={(isOpen) => this.updateMenu(isOpen)}
        disableGestures={true}
        >
         <ScrollView style={{ flex: 1, backgroundColor: '#fff' }}>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image } from 'react-native';
+import { View, Image, Dimensions } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import SideButton from '../common/SideButton';
 
@@ -9,7 +9,9 @@ class SideBarContent extends Component {
       render() {
         const { viewStyle, imageView } = styles;
         return (
+
             <View style={viewStyle} >
+            <View>
               <View>
               {/* eslint-disable-line global-require */}
               <Image
@@ -33,11 +35,11 @@ class SideBarContent extends Component {
                 >
                 Sponsorlar
                 </SideButton>
-
+                </View>
                 <View style={imageView}>
                 {/* eslint-disable-line global-require */}
                 <Image
-                    style={{ width: 'auto', height: 70, }}
+                    style={{ width: 'auto', height: 'auto', justifyContent: 'flex-end', }}
                     source={require('../img/gdg.jpg')}
                 />
                 {/* eslint-enable global-require */}
@@ -49,15 +51,22 @@ class SideBarContent extends Component {
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#ffffff',
+    backgroundColor: '#fff',
     borderEndColor: '#019879',
     borderWidth: 0.5,
     borderLeftWidth: 1,
     borderRightColor: '#019879',
+    height: Dimensions.get('window').height,
   },
   imageView: {
-    flexDirection: 'column',
     justifyContent: 'flex-end',
+    position: 'absolute',
+    bottom: 10,
+    width: 'auto',
+    height: 'auto',
+    right: 0,
+    backgroundColor: 'white',
+    //height: Dimensions.get('window').height/2 ,
   }
 };
 

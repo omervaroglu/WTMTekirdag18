@@ -27,11 +27,11 @@ class EventCalender extends Component {
        <SideMenu
        menu={<SideBarContent />}
        isOpen={this.state.isOpen}
-       onchanged={(isopen) => this.updateMenu(isOpen)}//ikinci kez tıklandığında açma işlemi yapmıyor.Düzelt.
-       disableGestures={true}//parmak kaydırma haraketiyle açılmaya kapalı
+       onChange={(isOpen) => this.updateMenu(isOpen)}
+       disableGestures={true}
        >
        <View style={{ flex: 1, backgroundColor: '#fff' }}>
-       <Header headerText="Etkinlik Takvimi" toggle={this.toggle.bind(this)} />
+       <Header headerText="Etkinlik Takvimi" toggle={this.toggle.bind(this)}ß />
        <Text >Henüz bir takvimimiz yok. Olur olmaz size haber vereceğiz.</Text>
        </View>
        </SideMenu>
