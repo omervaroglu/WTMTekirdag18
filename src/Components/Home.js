@@ -7,6 +7,7 @@ import SideBarContent from './SideBarContent';
 import Button from '../common/Button';
 import Header from '../common/Header';
 
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +46,29 @@ class Home extends Component {
 
     getDirections(data);
   }
+
+
+  addCalendar(title: string) {
+    const eventConfig = {
+      title,
+    };
+    return (
+      AddCalendarEvent.presentNewCalendarEventDialog(eventConfig)
+      .then(eventId => {
+        //handle success (receives event id) or dismissing the modal (receives false)
+        if (eventId) {
+        console.warn(eventId);
+      } else {
+      console.warn('dismissed');
+      }
+      })
+      .catch((error: string) => {
+        // handle error such as when user rejected permissions
+        console.warn(error);
+     })
+    );
+  }
+
   render() {
   return (
     <SideMenu
@@ -70,13 +94,16 @@ class Home extends Component {
           <Button onPress={this.handleGetDirections}> Konuma Bak </Button>
         </View>
         <View>
-         <Button> Takvime Ekle </Button>
+         <Button
+         onPress={() => { this.addCalendar('etkinlik'); }}
+         >
+          Takvime Ekle
+          </Button>
         </View>
         </View>
     </SideMenu>
   );
 }
 }
-
 
 export default Home;
