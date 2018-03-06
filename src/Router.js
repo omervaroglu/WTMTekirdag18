@@ -1,31 +1,39 @@
 import React from 'react';
 import { Scene, Router } from 'react-native-router-flux';
-import EventCalender from './Components/EventCalender';
-import Home from './Components/Home';
-import Speakers from './Components/Speakers';
-import Sponsors from './Components/Sponsors';
+import homeScreen from './Main';
+import eventCalender from './Screens/EventCalender';
+import speakers from './Screens/Speakers';
+import sponsors from './Screens/Sponsors';
+import team from './Screens/Team';
 
 const RouterComponent = () => {
   return (
-   <Router >
-    <Scene key="menu" >
+   <Router>
+    <Scene key='menu'>
       <Scene
-      key="HomeScreen"
-      component={Home}
+      component={homeScreen}
+      key='HomeScreen'
       hideNavBar
-      initial
       />
       <Scene
       key="CalenderScreen"
-      component={EventCalender}
+      component={eventCalender}
+      hideNavBar
       />
       <Scene
       key="SpeakersScreen"
-      component={Speakers}
+      component={speakers}
+      hideNavBar
       />
       <Scene
       key="SponsorsScreen"
-      component={Sponsors}
+      component={sponsors}
+      hideNavBar
+      />
+      <Scene
+      key="TeamScreen"
+      component={team}
+      hideNavBar
       />
     </Scene>
    </Router>

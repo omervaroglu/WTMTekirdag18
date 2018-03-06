@@ -2,7 +2,10 @@ package com.wtm_18;
 
 import android.app.Application;
 
+import com.barefootcoders.android.react.KDSocialShare.BuildConfig;
 import com.facebook.react.ReactApplication;
+import com.barefootcoders.android.react.KDSocialShare.KDSocialShare;
+
 import com.vonovak.AddCalendarEventPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +28,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new KDSocialShare(),
+            new KDSocialShare(),
             new AddCalendarEventPackage(),
             new VectorIconsPackage()
       );

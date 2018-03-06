@@ -15,9 +15,9 @@ const styles = {
    textStyle: {
      alignSelf: 'center',
      justifyContent: 'center',
-     color: '#ffffff',
+     color: '#fff',
      fontSize: 25,
-     fontWeight: '100',
+     fontWeight: '300',
      height: 'auto',
      width: 'auto'
       },
